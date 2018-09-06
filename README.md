@@ -58,11 +58,17 @@ In C, we compile and execute the code to see the output.
 In NodeJS, we will initiate the file and browse to port to see the output.
 
 To initiate the file, navigate to ```hello-node```:
-``` cd hello-node/```
+``` 
+cd hello-node/
+```
 Afterwards, type the following command:
-```node hello-node.js```
+```
+node hello-node.js
+```
 Voila! You must see an output like this:
-```Server running at http://127.0.0.1:3000/```
+```
+Server running at http://127.0.0.1:3000/
+```
 It means everything is working fine. You can open this [link](http://127.0.0.1:3000/) in your browser to see the output.
 
 To close the server, simply press Ctrl+C.
