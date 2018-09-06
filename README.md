@@ -6,13 +6,25 @@ A simplied tutorial to understand the basics of NodeJS. Using NodeJS is now as s
 
 ## [Hello-World](hello-node/hello-node.js)
 
-Let's begin with our good old "Hello World" exercise, but this time using NodeJS.
+Let's begin with our good old "Hello World" exercise, but this time using NodeJS. But wait, where should we print? How about on your browser?
+
+#### Importing http module
+In C, we need ```#include<stdio.h>``` to begin our program. stdio is a library.
+
+In NodeJS, we need  ```require(http)``` to initialize our server. http is a module. We will learn more about modules in future exercises.
+
+Include this code in your first node program to get you started.
 
  ```
-git status
-git add
-git commit
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
 ```
+First, We are importing http module to initialize the server. Afterwards, we are defining the host and the port where we want to see the output.
+
+#### Creating server object
+
+In C, we write our program in ```int main()``` function. 
 
 
 
