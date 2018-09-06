@@ -1,8 +1,24 @@
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)     [![Github all releases](https://img.shields.io/github/downloads/muskanbararia/Hello-Node/total.svg)](https://GitHub.com/muskanbararia/Hello-Node/releases/)     [![GitHub issues](https://img.shields.io/github/issues/muskanbararia/Hello-Node.svg)](https://GitHub.com/muskanbararia/Hello-Node/issues/)      [![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)     
-#Hello-Node 
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)     [![Github all releases](https://img.shields.io/github/downloads/muskanbararia/Hello-Node/total.svg)](https://GitHub.com/muskanbararia/Hello-Node/releases/)     [![GitHub issues](https://img.shields.io/github/issues/muskanbararia/Hello-Node.svg)](https://GitHub.com/muskanbararia/Hello-Node/issues/)      [![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm) 
+
+# Hello-Node 
+
+A simplied tutorial to understand the basics of NodeJS. Using NodeJS is now as simple as printing "Hello World".
+
+## [Hello-World](hello-node/hello-node.js)
+
+Let's begin with our good old "Hello World" exercise, but this time using NodeJS.
+
+ ```
+git status
+git add
+git commit
+```
 
 
-A simplied tutorial to understand the basics of NodeJS. Using NodeJS is now as simple as printing "Hello World."
+
+
+
+
 
 
 Basics of NodeJS:
