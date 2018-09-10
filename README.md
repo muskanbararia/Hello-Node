@@ -4,6 +4,10 @@
 
 A simplied tutorial to understand the basics of NodeJS. Using NodeJS is now as simple as printing "Hello World".
 
+## Index
+1. [Hello-World](https://github.com/muskanbararia/Hello-Node#hello-world)
+2. [Hello-Module](https://github.com/muskanbararia/Hello-Node#hello-module)
+
 ## [Hello-World](hello-node/hello-node.js)
 
 Let's begin with our good old "Hello World" exercise, but this time using NodeJS. But wait, where should we print? How about on your browser?
