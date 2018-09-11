@@ -12,6 +12,7 @@ const server = http.createServer((req, res) => {
       if (err) throw err;
       console.log('Saved!');
     });
+	res.end("Done");
 });
 
 //initializing server
