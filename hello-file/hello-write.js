@@ -8,7 +8,7 @@ const port = 3000;
 //Creating server object to return the url
 const server = http.createServer((req, res) => {
 	//Writing content in file
-	    fs.writeFile('three.txt', 'Hello content!', function (err) {
+	    fs.writeFile('one.txt', 'Hello content!', function (err) {
 	  	if (err) throw err;
 	  	console.log('Saved!');
 		});
