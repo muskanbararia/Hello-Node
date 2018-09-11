@@ -7,6 +7,7 @@ A simplied tutorial to understand the basics of NodeJS. Using NodeJS is now as s
 ## Index
 1. [Hello-World](https://github.com/muskanbararia/Hello-Node#hello-world)
 2. [Hello-Module](https://github.com/muskanbararia/Hello-Node#hello-module)
+3. [Hello-File]()
 
 ## [Hello-World](hello-node/hello-node.js)
 
@@ -179,3 +180,88 @@ It means everything is working fine. You can open this [link](http://127.0.0.1:3
 To close the server, simply press Ctrl+C.
 
 Congratulations, you have successfully created and utilized your very own module in NodeJS.
+
+## Hello-file
+
+Do you remember file handling in C, where we used to read data from a file, write into a file, delete file and so on? We will now try to do that using NodeJS. In C, we needed a FILE * to access files, here in NodeJS we need ```fs``` module to do that.
+```
+//creating an object of http module
+var http = require('http');
+// creating an object of fs module
+var fs = require('fs');
+```
+
+#### [Read from a file](https://github.com/muskanbararia/Hello-Node/blob/master/hello-file/hello-file.js)
+
+In C, we used to read data from a file and display it on console. In NodeJS, we will read data from a file and display the content on a webpage.
+
+So, let's begin with declaring the host and port and creating an instance of server using ```createServer()```.
+```
+var hostname = '127.0.0.1';
+var port = 3000;
+
+//Creating server object to return the url
+var server = http.createServer((req, res) => {
+```
+
+Now, we will need a file to read data from. So let's create an html file [one.html](https://github.com/muskanbararia/Hello-Node/blob/master/hello-file/one.html) that we want to display on our webpage.
+```
+<html>
+<body>
+<h1>My Header</h1>
+<p>My paragraph.</p>
+</body>
+</html>
+```
+
+Now, we have to first read the content of this file.
+```
+var server = http.createServer((req, res) => {
+	//reading data from html file
+    fs.readFile('one.html', function(err, data) {
+```
+
+*Note: since my one.html and hello-file.js are in same module, I can access it directly. If it was in some other directory, say 'Desktop' my code would be:*
+```
+fs.readFile('C://Desktop/one.html', function(err, data)
+```
+*Note: Make sure that your one.html has necessary permissions to be accessed.*
+
+here, ```err``` is a variable that will store the errors, if any, and ```data``` will store the content of the file.
+
+Now, let's write the data on our webpage:
+```
+//Creating server object to return the url
+var server = http.createServer((req, res) => {
+	//reading data from html file
+    fs.readFile('one.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    //writing data to webpage
+    res.write(data);
+    res.end();
+  });
+});
+```
+
+It's time to initialize our server.
+```
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+Execute:
+
+```
+cd hello-file
+node hello-file
+```
+It should print the following message on console:
+```
+Server running at http://127.0.0.1:3000/
+```
+
+It means everything is working fine. You can open this [link](http://127.0.0.1:3000/) in your browser to see the output.
+
+To close the server, simply press Ctrl+C.
+
+Congratulations, you have successfully displayed one.html on your webpage.
