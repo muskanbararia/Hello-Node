@@ -265,3 +265,142 @@ It means everything is working fine. You can open this [link](http://127.0.0.1:3
 To close the server, simply press Ctrl+C.
 
 Congratulations, you have successfully displayed one.html on your webpage.
+
+#### [Write into file](https://github.com/muskanbararia/Hello-Node/blob/master/hello-file/hello-write.js)
+
+```writeFile``` method of ```fs``` module will create a new file, if doesn't exist and replace file's content with provided content.
+Let's see it through demo:
+```
+const http = require('http');
+var fs = require('fs');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+//Creating server object to return the url
+const server = http.createServer((req, res) => {
+	//Writing content in file
+	    fs.writeFile('one.txt', 'Hello content!', function (err) {
+	  	if (err) throw err;
+	  	console.log('Saved!');
+		});
+	    res.end("Done");
+});
+
+//initializing server
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+Execute the code:
+```
+cd hello-file
+node hello-write.js
+```
+You will see that a new file *one.txt* will be created with *Hello content!* text. 
+If you re-execute the code with some other content, it will replace the existing content.
+
+#### [Append to file](https://github.com/muskanbararia/Hello-Node/blob/master/hello-file/hello-append.js)
+append file is same as writeFile, just that instead of replacing the content of file, it appends the content to end of file.
+
+```
+//creating an object of http module
+const http = require('http');
+var fs = require('fs');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+//Creating server object to return the url
+const server = http.createServer((req, res) => {
+	//reading data from html file
+    fs.appendFile('one.txt', 'Hello content!', function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
+	res.end("Done");
+});
+
+//initializing server
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+```
+cd hello-file
+node hello-append.js
+```
+You will see that a new file *one.txt* will be created with *Hello content!* text, if it doesn't exist. 
+If you are executing after executing hello-write, your one.txt will have *Hello Content!Hello content!*.
+
+#### [Rename a file](https://github.com/muskanbararia/Hello-Node/blob/master/hello-file/hello-rename.js)
+ If we want to rename one.txt to two.txt, we have to invoke ```rename``` method:
+ ```
+ 
+//creating an object of http module
+const http = require('http');
+var fs = require('fs');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+//Creating server object to return the url
+const server = http.createServer((req, res) => {
+	//Rename file
+	    fs.rename('one.txt', 'two.txt', function (err) {
+  		if (err) throw err;
+  		console.log('File Renamed!');
+		});
+		res.end("Done");
+});
+
+//initializing server
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+ ```
+ 
+Execute the code:
+```
+cd hello-file
+node hello-rename.js
+```
+You will see that a new file *one.txt* will be renamed as *two.txt*.
+
+#### [Delete a file](https://github.com/muskanbararia/Hello-Node/blob/master/hello-file/hello-delete.js)
+
+To delete a file, we can use ```unlink``` method of fs module.
+
+```
+//creating an object of http module
+const http = require('http');
+var fs = require('fs');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+//Creating server object to return the url
+const server = http.createServer((req, res) => {
+	//Deleting file
+	    fs.unlink('two.txt', function (err) {
+  		if (err) throw err;
+  		console.log('File deleted!');
+		});
+		res.end("Done");
+});
+
+//initializing server
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+
+```
+Execute the code:
+```
+cd hello-file
+node hello-delete.js
+```
+You will see that *two.txt* is deleted.
+
+
+
