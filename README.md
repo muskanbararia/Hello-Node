@@ -8,6 +8,7 @@ A simplied tutorial to understand the basics of NodeJS. Using NodeJS is now as s
 1. [Hello-World](https://github.com/muskanbararia/Hello-Node#hello-world)
 2. [Hello-Module](https://github.com/muskanbararia/Hello-Node#hello-module)
 3. [Hello-File](https://github.com/muskanbararia/Hello-Node/blob/master/README.md#hello-file)
+4. [Hello-Package](https://github.com/muskanbararia/Hello-Node#hello-package)
 
 ## [Hello-World](hello-node/hello-node.js)
 
@@ -402,7 +403,7 @@ node hello-delete.js
 ```
 You will see that *two.txt* is deleted.
 
-#### Hello-Package
+## [Hello-Package](https://github.com/muskanbararia/Hello-Node/blob/master/hello-package/hello-package.js)
 
 It is impossible to talk about NodeJS without mentioning NPM. So what exactly is NPM? 
 NPM is Node Package Manager which hosts thousands of free packages to download and use. To make a developer's life easy, there are already enough packages available to carry out your daily tasks. To download and use these packages, make sure that you have npm installed on your machine. You can follow the instructions from [here](https://www.npmjs.com/get-npm).
@@ -416,8 +417,38 @@ After executing this command, you will see that a directory is created with name
 
 Now, let's see how to use the package we just installed.
 first, we have to import the packages.
+```
+//creating an object of http module
+const http = require('http');
+var uc = require('upper-case');
+```
 
+Now let's create a server using http
 
+```
+const hostname = '127.0.0.1';
+const port = 3000;
 
+//Creating server object to return the resultant html content
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+```
+
+now, let's see the power of our imported package:
+```
+res.end(uc('Hello World!\n'));
+});
+```
+
+Let's initialize the server to check output:
+```
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+When we execute the given file, the output on the console should be 'HELLO WORLD!'. 
+Congratulations, you have successfully used your very first package.
 
 
