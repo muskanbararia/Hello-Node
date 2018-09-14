@@ -405,6 +405,19 @@ You will see that *two.txt* is deleted.
 #### Hello-Package
 
 It is impossible to talk about NodeJS without mentioning NPM. So what exactly is NPM? 
-NPM is Node Package Manager which hosts thousands of free packages to download and use. To make a developer's life easy, there are already enough packages available to carry out your daily tasks. 
+NPM is Node Package Manager which hosts thousands of free packages to download and use. To make a developer's life easy, there are already enough packages available to carry out your daily tasks. To download and use these packages, make sure that you have npm installed on your machine. You can follow the instructions from [here](https://www.npmjs.com/get-npm).
+
+Now, Let's use a package to see how it works.
+The package we will be using is *upper-case*. So let's first install this package.
+```
+npm install upper-case
+```
+After executing this command, you will see that a directory is created with name as *node_modules*. Inside that directory, all your packages that you've installed are stored.
+
+Now, let's see how to use the package we just installed.
+first, we have to import the packages
+
+
+
 
 
