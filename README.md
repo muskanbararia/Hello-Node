@@ -415,7 +415,7 @@ npm install upper-case
 After executing this command, you will see that a directory is created with name as *node_modules*. Inside that directory, all your packages that you've installed are stored.
 
 Now, let's see how to use the package we just installed.
-first, we have to import the packages
+first, we have to import the packages.
 
 
 
