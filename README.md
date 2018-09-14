@@ -402,5 +402,9 @@ node hello-delete.js
 ```
 You will see that *two.txt* is deleted.
 
+#### Hello-Package
+
+It is impossible to talk about NodeJS without mentioning NPM. So what exactly is NPM? 
+NPM is Node Package Manager which hosts thousands of free packages to download and use. To make a developer's life easy, there are already enough packages available to carry out your daily tasks. 
 
 
